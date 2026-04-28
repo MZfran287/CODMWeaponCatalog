@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CODMWeaponCatalog</string>
+    <string name="title_activity_weapon_list">WeaponListActivity</string>
 </resources>

@@ -6,7 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CategoryAdapter(private val list: List<String>) :
+class CategoryAdapter(
+    private val list: List<String>,
+    private val onClick: (String) -> Unit
+) :
     RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -20,7 +23,12 @@ class CategoryAdapter(private val list: List<String>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.tvName.text = list[position]
+        val category = list[position]
+        holder.tvName.text = category
+
+        holder.itemView.setOnClickListener {
+            onClick(category)
+        }
     }
 
     override fun getItemCount(): Int = list.size

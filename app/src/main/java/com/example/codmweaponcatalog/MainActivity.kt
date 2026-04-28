@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +24,12 @@ class MainActivity : AppCompatActivity() {
         )
 
         rvCategory.layoutManager = LinearLayoutManager(this)
-        rvCategory.adapter = CategoryAdapter(categories)
+        rvCategory.adapter = CategoryAdapter(categories) { selectedCategory ->
+
+            val intent = Intent(this, WeaponListActivity::class.java)
+            intent.putExtra("CATEGORY", selectedCategory)
+            startActivity(intent)
+
+        }
     }
 }
