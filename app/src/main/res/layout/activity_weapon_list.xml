@@ -18,6 +18,39 @@
         android:textColor="#FFFFFF"
         android:layout_marginBottom="16dp"/>
 
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search weapon..."
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="12dp"/>
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <Button
+            android:id="@+id/btnAZ"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="A-Z" />
+
+        <Button
+            android:id="@+id/btnZA"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Z-A"/>
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvWeapon"
         android:layout_width="match_parent"
